@@ -1,7 +1,16 @@
 import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-function App() {
-  return <p>Hello World!!!</p>;
-}
+import ListScreen from "../screens/List";
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={ListScreen} />
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
 export default App;
