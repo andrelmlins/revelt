@@ -4,5 +4,13 @@
   "private": true,
   "devDependencies": {
     "lerna": "^3.20.2"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn build:react && yarn build:svelte",
+    "build:react": "cd packages/react-app && yarn build && cd ../../ && yarn build:react:copy",
+    "build:svelte": "cd packages/svelte-app && yarn build && cd ../../ && yarn build:svelte:copy",
+    "build:react:copy": "cp -r packages/react-app/build build/react",
+    "build:svelte:copy": "cp -r packages/svelte-app/public build/svelte",
+    "clean": "if [ -d build ]; then rm -Rf build; fi && mkdir build"
   }
 }
