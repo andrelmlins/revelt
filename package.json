@@ -1,5 +1,6 @@
 {
   "name": "root",
+  "description": "Analysis of a project using React and Svelte technologies",
   "private": true,
   "devDependencies": {
     "lerna": "^3.20.2"
