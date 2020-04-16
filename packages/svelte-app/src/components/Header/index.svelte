@@ -2,7 +2,7 @@
   header {
     color: black;
     align-items: center;
-    border-bottom: 3px solid #5dd4f4;
+    border-bottom: 3px solid #ff3d00;
     background-color: white;
     position: static;
     transform: translateZ(0);
