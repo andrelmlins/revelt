@@ -8,14 +8,16 @@ import ListScreen from "../screens/List";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Content>
-        <Switch>
-          <Route path="/" component={ListScreen} />
-        </Switch>
+        <BrowserRouter basename="/react/">
+          <Switch>
+            <Route exact path="/" component={ListScreen} />
+          </Switch>
+        </BrowserRouter>
       </Content>
-    </BrowserRouter>
+    </>
   );
 };
 

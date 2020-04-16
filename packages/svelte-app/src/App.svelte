@@ -12,7 +12,7 @@
 </style>
 
 <main>
-  <Router>
+  <Router basepath="/svelte">
     <Header />
     <Content>
       <Route path="/" component={List} />
