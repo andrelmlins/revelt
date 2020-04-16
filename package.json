@@ -3,9 +3,13 @@
   "description": "Analysis of a project using React and Svelte technologies",
   "private": true,
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "lerna": "^3.20.2"
   },
   "scripts": {
+    "start": "concurrently --kill-others \"yarn start:react\" \"yarn start:svelte\"",
+    "start:react": "cd packages/react-app && yarn start",
+    "start:svelte": "cd packages/svelte-app && yarn dev",
     "build": "yarn clean && yarn build:react && yarn build:svelte",
     "build:react": "cd packages/react-app && yarn build && cd ../../ && yarn build:react:copy",
     "build:svelte": "cd packages/svelte-app && yarn build && cd ../../ && yarn build:svelte:copy",
