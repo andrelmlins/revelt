@@ -1,40 +1,33 @@
 <style>
   header {
     color: black;
-    align-items: center;
-    border-bottom: 3px solid #ff3d00;
-    background-color: white;
+    background-color: #ff3d00;
     position: static;
-    transform: translateZ(0);
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1100;
     box-sizing: border-box;
     flex-shrink: 0;
     flex-direction: column;
-  }
-
-  .root {
-    width: 100%;
-    padding: 0;
-    max-width: 800px;
     min-height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-
   p {
     font-size: 30px;
     margin: 0;
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px #333;
+  }
+  p strong {
+    font-weight: 900;
   }
 </style>
 
 <header>
-  <div class="root">
-    <p>
-      <strong>Svelte</strong>
-      x React
-    </p>
-  </div>
+  <p>
+    <strong>Svelte</strong>
+    x React
+  </p>
 </header>

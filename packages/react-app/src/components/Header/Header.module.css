@@ -1,6 +1,5 @@
 .header {
   color: black;
-  border-bottom: 3px solid #5dd4f4;
   background-color: #5dd4f4;
   position: static;
   width: 100%;
@@ -19,7 +18,7 @@
   margin: 0;
   color: white;
   font-weight: 600;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px #333;
 }
 
 .title strong {
