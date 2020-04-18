@@ -1,5 +1,25 @@
 .root {
+  margin: 0 auto;
+}
+
+.content {
   max-width: 800px;
   margin: 0 auto;
   padding: 16px 0px;
+}
+
+.header {
+  background-image: url("https://ak3.picdn.net/shutterstock/videos/1456663/thumb/1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  height: 80px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 100%;
 }
