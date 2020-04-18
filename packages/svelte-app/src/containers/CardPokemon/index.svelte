@@ -1,0 +1,40 @@
+<style>
+  .root {
+    width: 33%;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 10px solid #386aad;
+    border-left: 10px solid #eeeeee;
+    border-right: 10px solid #eeeeee;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  img {
+    height: 150px;
+    transform: rotate(0deg);
+    transition: 0.8s ease-in-out;
+    margin-bottom: 15px;
+  }
+
+  img:hover {
+    transform: rotate(360deg);
+  }
+
+  p {
+    font-family: Pokemon;
+    color: #386aad;
+    font-size: 25pt;
+    margin: 0;
+  }
+</style>
+
+<div class="root">
+  <img alt="Pokemon" src="https://cdn.traction.one/pokedex/pokemon/1.png" />
+  <p>Bulbasauru</p>
+</div>

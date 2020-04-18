@@ -1,7 +1,8 @@
 import React from "react";
+import CardPokemon from "../../containers/CardPokemon";
 
 const ListScreen = () => {
-  return <p>List</p>;
+  return <CardPokemon />;
 };
 
 export default ListScreen;
