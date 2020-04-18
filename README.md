@@ -1,6 +1,13 @@
 # React x Svelte
 
-Analysis of a project using React and Svelte technologies
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b4236789-1014-47c4-a80a-7e98d4dfcd13/deploy-status)](https://app.netlify.com/sites/react-versus-svelte/deploys)
+
+Analysis of a project using React and Svelte technologies.
+
+## Applications
+
+- [Svelte](https://react-versus-svelte.netlify.app/svelte/)
+- [React](https://react-versus-svelte.netlify.app/react/)
 
 ## Contribution guidelines
 
