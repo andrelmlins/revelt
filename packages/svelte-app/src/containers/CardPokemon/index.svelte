@@ -1,6 +1,10 @@
+<script>
+  export let pokemon;
+</script>
+
 <style>
   .root {
-    width: 33%;
+    width: 100%;
     padding: 16px;
     box-sizing: border-box;
     border-radius: 1px;
@@ -16,7 +20,9 @@
   }
 
   img {
-    height: 150px;
+    width: 150px;
+    height: auto;
+    max-width: 100%;
     transform: rotate(0deg);
     transition: 0.8s ease-in-out;
     margin-bottom: 15px;
@@ -35,6 +41,8 @@
 </style>
 
 <div class="root">
-  <img alt="Pokemon" src="https://cdn.traction.one/pokedex/pokemon/1.png" />
-  <p>Bulbasauru</p>
+  <img
+    alt="Pokemon"
+    src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`} />
+  <p>{pokemon.name}</p>
 </div>
