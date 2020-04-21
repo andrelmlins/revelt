@@ -11,4 +11,6 @@ script:
 jobs:
   include:
     - stage: build
-      script: yarn build
+      script:
+        - yarn bootstrap
+        - yarn build

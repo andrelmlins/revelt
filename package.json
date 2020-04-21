@@ -16,6 +16,7 @@
     "copy:react": "cp -r packages/react-app/build build/react",
     "copy:svelte": "cp -r packages/svelte-app/public build/svelte",
     "copy:homepage": "cp -rf packages/homepage/src/* build",
-    "clean": "if [ -d build ]; then rm -Rf build; fi && mkdir build"
+    "clean": "if [ -d build ]; then rm -Rf build; fi && mkdir build",
+    "bootstrap": "lerna exec npm install"
   }
 }
