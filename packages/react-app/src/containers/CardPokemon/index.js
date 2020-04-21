@@ -13,7 +13,7 @@ const CardPokemonContainer = ({ pokemon }) => {
   return (
     <div className={style.root}>
       <img
-        className={style.img}
+        className={`${style.img} ${errorImage ? style.defaultImage : ""}`}
         alt={pokemon.name}
         onError={() => setErrorImage(true)}
         src={errorImage ? IMAGE_ERROR : imageUrl}

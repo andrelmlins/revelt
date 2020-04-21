@@ -23,6 +23,7 @@
     border-right: 10px solid #eeeeee;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
       0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
   }
 
   img {
@@ -42,12 +43,17 @@
     font-size: 25pt;
     margin: 0;
   }
+
+  .defaultImage:hover {
+    transform: rotate(0deg);
+  }
 </style>
 
 <div class="root">
   <img
     on:error={() => (errorImage = true)}
     alt={pokemon.name}
-    src={errorImage ? IMAGE_ERROR : imageUrl} />
+    src={errorImage ? IMAGE_ERROR : imageUrl}
+    class={errorImage ? 'defaultImage' : ''} />
   <p>{pokemon.name}</p>
 </div>
