@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "10"
+  - "12"
+cache: yarn
+
+install: yarn
+script:
+  - echo "Not found tests"
+
+jobs:
+  include:
+    - stage: build
+      script: yarn build
