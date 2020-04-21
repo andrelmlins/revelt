@@ -6,7 +6,8 @@
   .content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 16px 0px;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
   header {

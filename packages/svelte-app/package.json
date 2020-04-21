@@ -19,6 +19,7 @@
     "axios": "^0.19.2",
     "sirv-cli": "^0.4.4",
     "svelte-grid-responsive": "^0.3.0",
+    "svelte-infinite-scroll": "^1.4.0",
     "svelte-routing": "^1.4.2"
   }
 }

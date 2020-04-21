@@ -20,12 +20,10 @@
   }
 
   img {
-    width: 150px;
+    width: 100%;
     height: auto;
-    max-width: 100%;
     transform: rotate(0deg);
     transition: 0.8s ease-in-out;
-    margin-bottom: 15px;
   }
 
   img:hover {
@@ -43,6 +41,6 @@
 <div class="root">
   <img
     alt={pokemon.name}
-    src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`} />
+    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} />
   <p>{pokemon.name}</p>
 </div>

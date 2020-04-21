@@ -574,6 +574,11 @@ svelte-grid-responsive@^0.3.0:
   resolved "https://registry.yarnpkg.com/svelte-grid-responsive/-/svelte-grid-responsive-0.3.0.tgz#1d74b2a87e30daeff11d6dfcdab98233240b6212"
   integrity sha512-CRS3uDvib1XyUYMJMpHC6Pst/AH7HC+YrsXSJf03oslv2TD7cFoFB2Q2KZfifQUrmhWzURwJwJKXOoZY5gjs9g==
 
+svelte-infinite-scroll@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/svelte-infinite-scroll/-/svelte-infinite-scroll-1.4.0.tgz#1045a823b0ba9da4395f1c2a6d21c441e301169a"
+  integrity sha512-Iezoxj24argq/iF6uCW9XN5dM3B7xgSzpUTXR2i+g80lP7sepQt9oYMg8Yt6aWhcgt6HStgjdAVX8pCfRKdppQ==
+
 svelte-routing@^1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/svelte-routing/-/svelte-routing-1.4.2.tgz#291160b537c9c73e711731eb099c48bb24cc3419"

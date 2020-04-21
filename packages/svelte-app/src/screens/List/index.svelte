@@ -1,15 +1,26 @@
 <script>
   import { onMount } from "svelte";
+  import SvelteInfiniteScroll from "svelte-infinite-scroll";
   import Grid from "svelte-grid-responsive";
+
   import CardPokemon from "../../containers/CardPokemon/index.svelte";
   import { allPokemons } from "../../services/pokemons";
 
   let pokemons = [];
+  let hasMore = false;
+  let page = 0;
 
-  onMount(async () => {
-    const data = await allPokemons();
-    pokemons = data.results;
+  onMount(() => {
+    getData();
   });
+
+  const getData = async () => {
+    page++;
+
+    const data = await allPokemons(page - 1);
+    pokemons = [...pokemons, ...data.results];
+    hasMore = !!data.next;
+  };
 </script>
 
 <Grid container gutter={12}>
@@ -19,3 +30,9 @@
     </Grid>
   {/each}
 </Grid>
+
+<SvelteInfiniteScroll
+  {hasMore}
+  threshold={200}
+  window
+  on:loadMore={() => getData()} />
