@@ -1,15 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 import style from "./CardPokemon.module.css";
 
-const CardPokemonContainer = () => (
+const CardPokemonContainer = ({ pokemon }) => (
   <div className={style.root}>
     <img
       className={style.img}
-      alt="Pokemon"
-      src="https://cdn.traction.one/pokedex/pokemon/1.png"
+      alt={pokemon.name}
+      src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`}
     />
-    <p className={style.text}>Bulbasauru</p>
+    <p className={style.text}>{pokemon.name}</p>
   </div>
 );
+
+CardPokemonContainer.propTypes = {
+  pokemon: PropTypes.object
+};
 
 export default CardPokemonContainer;

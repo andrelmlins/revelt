@@ -42,7 +42,7 @@
 
 <div class="root">
   <img
-    alt="Pokemon"
+    alt={pokemon.name}
     src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`} />
   <p>{pokemon.name}</p>
 </div>
