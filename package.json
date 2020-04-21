@@ -10,11 +10,12 @@
     "start": "concurrently --kill-others \"yarn start:react\" \"yarn start:svelte\"",
     "start:react": "cd packages/react-app && yarn start",
     "start:svelte": "cd packages/svelte-app && yarn dev",
-    "build": "yarn clean && yarn build:react && yarn build:svelte",
-    "build:react": "cd packages/react-app && yarn build && cd ../../ && yarn build:react:copy",
-    "build:svelte": "cd packages/svelte-app && yarn build && cd ../../ && yarn build:svelte:copy",
-    "build:react:copy": "cp -r packages/react-app/build build/react",
-    "build:svelte:copy": "cp -r packages/svelte-app/public build/svelte",
+    "build": "yarn clean && yarn build:react && yarn build:svelte && yarn copy:homepage",
+    "build:react": "cd packages/react-app && yarn build && cd ../../ && yarn copy:react",
+    "build:svelte": "cd packages/svelte-app && yarn build && cd ../../ && yarn copy:svelte",
+    "copy:react": "cp -r packages/react-app/build build/react",
+    "copy:svelte": "cp -r packages/svelte-app/public build/svelte",
+    "copy:homepage": "cp -rf packages/homepage/src/* build",
     "clean": "if [ -d build ]; then rm -Rf build; fi && mkdir build"
   }
 }
