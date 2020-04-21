@@ -5,8 +5,10 @@ import { Row, Col } from "react-grid-system";
 import CardPokemon from "../../containers/CardPokemon";
 
 import { allPokemons } from "../../services/pokemons";
+import Loader from "../../components/Loader";
 
 const ListScreen = () => {
+  const [loading, setLoading] = useState(true);
   const [pokemons, setPokemons] = useState([]);
   const [hasMore, setHasMore] = useState(false);
 
@@ -16,6 +18,7 @@ const ListScreen = () => {
 
       setPokemons(pokemons => [...pokemons, ...data.results]);
       setHasMore(!!data.next);
+      setTimeout(() => setLoading(false), 1000);
     };
 
     getData();
@@ -27,6 +30,10 @@ const ListScreen = () => {
     setPokemons([...pokemons, ...data.results]);
     setHasMore(!!data.next);
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <InfiniteScroll pageStart={0} loadMore={getMore} hasMore={hasMore}>
