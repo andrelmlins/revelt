@@ -4,11 +4,12 @@
   import Grid from "svelte-grid-responsive";
 
   import CardPokemon from "../../containers/CardPokemon/index.svelte";
+
   import { allPokemons } from "../../services/pokemons";
 
   let pokemons = [];
   let hasMore = false;
-  let page = 0;
+  let page = -1;
 
   onMount(() => {
     getData();
@@ -17,7 +18,7 @@
   const getData = async () => {
     page++;
 
-    const data = await allPokemons(page - 1);
+    const data = await allPokemons(page);
     pokemons = [...pokemons, ...data.results];
     hasMore = !!data.next;
   };

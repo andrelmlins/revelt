@@ -7,7 +7,7 @@ const CardPokemonContainer = ({ pokemon }) => (
     <img
       className={style.img}
       alt={pokemon.name}
-      src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`}
+      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
     />
     <p className={style.text}>{pokemon.name}</p>
   </div>

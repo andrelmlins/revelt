@@ -1,30 +1,43 @@
 import React, { useEffect, useState } from "react";
+import InfiniteScroll from "react-infinite-scroller";
 import { Row, Col } from "react-grid-system";
-import { allPokemons } from "../../services/pokemons";
 
 import CardPokemon from "../../containers/CardPokemon";
 
+import { allPokemons } from "../../services/pokemons";
+
 const ListScreen = () => {
   const [pokemons, setPokemons] = useState([]);
+  const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
-      const data = await allPokemons();
+      const data = await allPokemons(0);
 
-      setPokemons(data.results);
+      setPokemons(pokemons => [...pokemons, ...data.results]);
+      setHasMore(!!data.next);
     };
 
     getData();
   }, []);
 
+  const getMore = async page => {
+    const data = await allPokemons(page);
+
+    setPokemons([...pokemons, ...data.results]);
+    setHasMore(!!data.next);
+  };
+
   return (
-    <Row gutterWidth={12}>
-      {pokemons.map(item => (
-        <Col key={item.id} xs={12} sm={6} lg={4} style={{ marginBottom: 12 }}>
-          <CardPokemon pokemon={item} />
-        </Col>
-      ))}
-    </Row>
+    <InfiniteScroll pageStart={0} loadMore={getMore} hasMore={hasMore}>
+      <Row gutterWidth={12}>
+        {pokemons.map(item => (
+          <Col key={item.id} xs={12} sm={6} lg={4} style={{ marginBottom: 12 }}>
+            <CardPokemon pokemon={item} />
+          </Col>
+        ))}
+      </Row>
+    </InfiniteScroll>
   );
 };
 
