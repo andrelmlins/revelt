@@ -1,5 +1,11 @@
 <script>
+  import { IMAGE_ERROR } from "../../core/constants";
+
   export let pokemon;
+
+  let errorImage = false;
+
+  $: imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
 </script>
 
 <style>
@@ -40,7 +46,8 @@
 
 <div class="root">
   <img
+    on:error={() => (errorImage = true)}
     alt={pokemon.name}
-    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} />
+    src={errorImage ? IMAGE_ERROR : imageUrl} />
   <p>{pokemon.name}</p>
 </div>
