@@ -18,7 +18,7 @@ const ListScreen = () => {
 
       setPokemons(pokemons => [...pokemons, ...data.results]);
       setHasMore(!!data.next);
-      setTimeout(() => setLoading(false), 1000);
+      setTimeout(() => setLoading(false), 2000);
     };
 
     getData();

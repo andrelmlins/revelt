@@ -4,7 +4,7 @@ import style from "./Loader.module.css";
 
 const LoaderComponent = () => (
   <div role="alert" aria-busy="true" className={style.root}>
-    <img alt="Loader" className={style.image} src="react/assets/spinner.gif" />
+    <img alt="Loader" src="react/assets/spinner.gif" />
   </div>
 );
 

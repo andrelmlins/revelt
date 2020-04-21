@@ -4,12 +4,14 @@
   import Grid from "svelte-grid-responsive";
 
   import CardPokemon from "../../containers/CardPokemon/index.svelte";
+  import Loader from "../../components/Loader/index.svelte";
 
   import { allPokemons } from "../../services/pokemons";
 
   let pokemons = [];
   let hasMore = false;
   let page = -1;
+  let loading = true;
 
   onMount(() => {
     getData();
@@ -21,16 +23,22 @@
     const data = await allPokemons(page);
     pokemons = [...pokemons, ...data.results];
     hasMore = !!data.next;
+
+    setTimeout(() => (loading = false), 2000);
   };
 </script>
 
-<Grid container gutter={12}>
-  {#each pokemons as pokemon}
-    <Grid xs={12} sm={6} lg={4}>
-      <CardPokemon {pokemon} />
-    </Grid>
-  {/each}
-</Grid>
+{#if loading}
+  <Loader />
+{:else}
+  <Grid container gutter={12}>
+    {#each pokemons as pokemon}
+      <Grid xs={12} sm={6} lg={4}>
+        <CardPokemon {pokemon} />
+      </Grid>
+    {/each}
+  </Grid>
+{/if}
 
 <SvelteInfiniteScroll
   {hasMore}
