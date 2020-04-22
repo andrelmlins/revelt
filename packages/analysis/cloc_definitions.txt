@@ -1,0 +1,39 @@
+CSS
+    filter rm_comments_in_strings " /* */
+    filter rm_comments_in_strings " // 
+    filter call_regexp_common C
+    extension css
+    3rd_gen_scale 1.00
+HTML
+    filter remove_html_comments
+    filter call_regexp_common HTML
+    extension htm
+    extension html
+    extension svelte
+    extension html.hl
+    extension xht
+    3rd_gen_scale 1.90
+JavaScript
+    filter rm_comments_in_strings " /* */
+    filter rm_comments_in_strings " // 
+    filter call_regexp_common C++
+    extension _js
+    extension bones
+    extension es6
+    extension jake
+    extension jakefile
+    extension js
+    extension jsb
+    extension jscad
+    extension jsfl
+    extension jsm
+    extension jss
+    extension mjs
+    extension njs
+    extension pac
+    extension sjs
+    extension ssjs
+    extension xsjs
+    extension xsjslib
+    3rd_gen_scale 1.48
+    end_of_line_continuation \\$

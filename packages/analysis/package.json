@@ -1,0 +1,13 @@
+{
+  "name": "analysis",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "dependencies": {
+    "cloc": "^2.5.1",
+    "get-folder-size": "^2.0.1",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "build": "node src/index.js"
+  }
+}

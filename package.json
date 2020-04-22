@@ -18,5 +18,8 @@
     "copy:homepage": "cp -rf packages/homepage/src/* build",
     "clean": "if [ -d build ]; then rm -Rf build; fi && mkdir build",
     "bootstrap": "lerna exec npm install"
+  },
+  "dependencies": {
+    "get-folder-size": "^2.0.1"
   }
 }
