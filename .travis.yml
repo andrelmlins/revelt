@@ -18,7 +18,7 @@ jobs:
       services:
         - docker
       env:
-        - IMAGE_NAME=andrelmlins1/freesoccer
+        - IMAGE_NAME=andrelmlins1/react-svelte-comparison
       script:
         - docker build --pull --cache-from "${IMAGE_NAME}:latest" --tag "$IMAGE_NAME" .
         - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
