@@ -1,3 +1,8 @@
+* {
+  color: #424242;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 html,
 body {
   width: 100%;
@@ -21,7 +26,6 @@ header {
   background-color: white;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 25pt;
   font-weight: 900;
   display: flex;
@@ -30,7 +34,6 @@ header {
   align-items: center;
   padding: 16px;
   box-sizing: border-box;
-  color: #424242;
 }
 
 header a {
@@ -43,9 +46,24 @@ header a:hover {
 }
 
 img {
-  height: 500px;
+  height: 300px;
   max-width: 100%;
   max-height: 100%;
+  margin-bottom: 50px;
+}
+
+h3 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul * {
+  color: white !important;
+  font-size: 20pt;
+  text-align: center;
 }
 
 .block {
@@ -57,6 +75,8 @@ img {
   padding: 32px;
   box-sizing: border-box;
   transition: 0.5s all;
+  flex-direction: column;
+  text-decoration: none;
 }
 
 .block:hover {
