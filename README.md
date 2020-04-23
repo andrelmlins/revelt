@@ -2,6 +2,7 @@
   <img alt="Logo" src="https://raw.githubusercontent.com/andrelmlins/react-versus-svelte/master/logo.png" />
   <h1>React x Svelte</h1>
   <h4>Analysis of a project using React and Svelte technologies.</h4>
+  <br />
 </div>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/andrelmlins/react-versus-svelte/blob/master/LICENSE) &bull; [![Build Status](https://travis-ci.com/andrelmlins/react-versus-svelte.svg?branch=master)](https://travis-ci.com/andrelmlins/react-versus-svelte) &bull; [![Docker Pulls](https://img.shields.io/docker/pulls/andrelmlins1/react-versus-svelte)](https://hub.docker.com/repository/docker/andrelmlins1/react-versus-svelte) &bull; [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/andrelmlins1/react-versus-svelte)](https://hub.docker.com/repository/docker/andrelmlins1/react-versus-svelte)
