@@ -111,8 +111,7 @@ ul * {
   }
 
   ul * {
-    color: white !important;
-    font-size: 15pt;
-    text-align: center;
+    font-size: 13pt;
+    text-align: left;
   }
 }
