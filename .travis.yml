@@ -6,14 +6,15 @@ cache: yarn
 
 install: yarn
 script:
-  - echo "Not found tests"
+  - npm install netlify-cli -g
+  - yarn bootstrap
+  - yarn build
 
 jobs:
   include:
-    - stage: build
+    - stage: deploy
       script:
-        - yarn bootstrap
-        - yarn build
+        - netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
     - stage: docker-deploy
       services:
         - docker

@@ -4,10 +4,6 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 
-RUN yarn install
-RUN yarn bootstrap
-RUN yarn build
-
 FROM nginx:1.17.10-alpine
 
 RUN mkdir -p /app
