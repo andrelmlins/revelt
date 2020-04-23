@@ -4,8 +4,48 @@ const getSize = require("get-folder-size");
 const { exec } = require("child_process");
 const rimraf = require("rimraf");
 const fs = require("fs");
+const handler = require("serve-handler");
+const http = require("http");
 
 const object = { svelte: {}, react: {} };
+
+const getAvailable = () => {
+  const serverSvelte = http.createServer((request, response) => {
+    return handler(request, response, {
+      public: "../../build/svelte",
+      rewrites: [{ source: "/svelte", destination: "index.html" }]
+    });
+  });
+
+  serverSvelte.listen(3000, () => {
+    exec(
+      'lighthouse http://localhost:3000/svelte --output=json --output-path=build/perfSvelte.json --chrome-flags="--headless"',
+      () => {
+        const file = fs.readFileSync("./build/perfSvelte.json");
+        object.svelte.time = JSON.parse(file.toString()).audits.metrics;
+        serverSvelte.close();
+      }
+    );
+  });
+
+  const serverReact = http.createServer((request, response) => {
+    return handler(request, response, {
+      public: "../../build/react",
+      rewrites: [{ source: "/react", destination: "index.html" }]
+    });
+  });
+
+  serverReact.listen(3001, () => {
+    exec(
+      'lighthouse http://localhost:3001/react --output=json --output-path=build/perfReact.json --chrome-flags="--headless"',
+      () => {
+        const file = fs.readFileSync("./build/perfReact.json");
+        object.react.time = JSON.parse(file.toString()).audits.metrics;
+        serverReact.close();
+      }
+    );
+  });
+};
 
 const getSizes = () => {
   getSize("../../build/svelte", (err, size) => {
@@ -53,6 +93,7 @@ const getCountLines = () => {
 
 getSizes();
 getCountLines();
+getAvailable();
 
 process.on("exit", () => {
   if (fs.existsSync("build")) {
