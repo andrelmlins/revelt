@@ -9,7 +9,11 @@
     "rimraf": "^3.0.2",
     "serve-handler": "^6.1.2"
   },
+  "devDependencies": {
+    "serve": "^11.3.0"
+  },
   "scripts": {
+    "start": "serve public",
     "build": "node src/index.js"
   }
 }

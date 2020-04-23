@@ -16,6 +16,19 @@ const createBuildFolder = () => {
   fs.mkdirSync("build");
 };
 
+const copyPublic = () => {
+  if (fs.existsSync("build/assets")) {
+    rimraf.sync("build/assets");
+  }
+  fs.mkdirSync("build/assets");
+
+  fs.copyFileSync("public/assets/react.svg", "build/assets/react.svg");
+  fs.copyFileSync("public/assets/svelte.svg", "build/assets/svelte.svg");
+  fs.copyFileSync("public/global.css", "build/global.css");
+  fs.copyFileSync("public/script.js", "build/script.js");
+  fs.copyFileSync("public/index.html", "build/index.html");
+};
+
 const getAvailable = () => {
   const serverSvelte = http.createServer((request, response) => {
     return handler(request, response, {
@@ -27,8 +40,7 @@ const getAvailable = () => {
   serverSvelte.listen(3000, () => {
     exec(
       'lighthouse http://localhost:3000/svelte --output=json --output-path=build/perfSvelte.json --chrome-flags="--headless"',
-      (error, stdout) => {
-        console.log(error, stdout);
+      () => {
         const file = fs.readFileSync("./build/perfSvelte.json");
         object.svelte.time = JSON.parse(file.toString()).audits.metrics;
         serverSvelte.close();
@@ -100,10 +112,13 @@ const getCountLines = () => {
 };
 
 createBuildFolder();
+copyPublic();
 getSizes();
 getCountLines();
 getAvailable();
 
 process.on("exit", () => {
+  fs.unlinkSync("build/perfReact.json");
+  fs.unlinkSync("build/perfSvelte.json");
   fs.appendFileSync("build/data.json", JSON.stringify(object));
 });
