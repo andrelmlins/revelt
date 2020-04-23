@@ -14,7 +14,7 @@ jobs:
         - npm install netlify-cli -g
         - yarn bootstrap
         - yarn build
-        - netlify deploy -site $NETLIFY_SITE_ID -auth $NETLIFY_ACCESS_TOKEN --dir=./build --prod
+        - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir=./build --prod
     # - stage: docker-deploy
     #   services:
     #     - docker
