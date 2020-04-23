@@ -9,6 +9,13 @@ const http = require("http");
 
 const object = { svelte: {}, react: {} };
 
+const createBuildFolder = () => {
+  if (fs.existsSync("build")) {
+    rimraf.sync("build");
+  }
+  fs.mkdirSync("build");
+};
+
 const getAvailable = () => {
   const serverSvelte = http.createServer((request, response) => {
     return handler(request, response, {
@@ -91,15 +98,11 @@ const getCountLines = () => {
   );
 };
 
+createBuildFolder();
 getSizes();
 getCountLines();
 getAvailable();
 
 process.on("exit", () => {
-  if (fs.existsSync("build")) {
-    rimraf.sync("build");
-  }
-
-  fs.mkdirSync("build");
   fs.appendFileSync("build/data.json", JSON.stringify(object));
 });
