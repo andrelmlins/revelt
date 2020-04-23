@@ -27,7 +27,8 @@ const getAvailable = () => {
   serverSvelte.listen(3000, () => {
     exec(
       'lighthouse http://localhost:3000/svelte --output=json --output-path=build/perfSvelte.json --chrome-flags="--headless"',
-      () => {
+      (error, stdout) => {
+        console.log(error, stdout);
         const file = fs.readFileSync("./build/perfSvelte.json");
         object.svelte.time = JSON.parse(file.toString()).audits.metrics;
         serverSvelte.close();
