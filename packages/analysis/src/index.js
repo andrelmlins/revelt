@@ -26,6 +26,7 @@ const copyPublic = () => {
   fs.copyFileSync("public/assets/svelte.svg", "build/assets/svelte.svg");
   fs.copyFileSync("public/global.css", "build/global.css");
   fs.copyFileSync("public/script.js", "build/script.js");
+  fs.copyFileSync("public/favicon.ico", "build/favicon.ico");
   fs.copyFileSync("public/index.html", "build/index.html");
 };
 
