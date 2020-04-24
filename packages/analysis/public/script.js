@@ -35,6 +35,10 @@ fetch("data.json")
       "beforeend",
       `<li>First Paint: <strong>${reactFirstMeaningfulPaint}s</strong></li>`
     );
+    ulReact.insertAdjacentHTML(
+      "beforeend",
+      `<li>Build Time: <strong>${json.react.buildTime.format}</strong></li>`
+    );
 
     ulSvelte.insertAdjacentHTML(
       "beforeend",
@@ -51,5 +55,9 @@ fetch("data.json")
     ulSvelte.insertAdjacentHTML(
       "beforeend",
       `<li>First Paint: <strong>${svelteFirstMeaningfulPaint}s</strong></li>`
+    );
+    ulSvelte.insertAdjacentHTML(
+      "beforeend",
+      `<li>Build Time: <strong>${json.svelte.buildTime.format}</strong></li>`
     );
   });

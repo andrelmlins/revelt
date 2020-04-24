@@ -112,11 +112,34 @@ const getCountLines = () => {
   );
 };
 
+const getTimeBundle = () => {
+  const startDateReact = new Date();
+  exec("cd ../react-app && yarn build", () => {
+    const time = new Date().getTime() - startDateReact.getTime();
+
+    object.react.buildTime = {
+      miliseconds: time,
+      format: `${(time / 1000).toFixed(2)}s`
+    };
+  });
+
+  const startDateSvelte = new Date();
+  exec("cd ../svelte-app && yarn build", () => {
+    const time = new Date().getTime() - startDateSvelte.getTime();
+
+    object.svelte.buildTime = {
+      miliseconds: time,
+      format: `${(time / 1000).toFixed(2)}s`
+    };
+  });
+};
+
 createBuildFolder();
 copyPublic();
 getSizes();
 getCountLines();
 getAvailable();
+getTimeBundle();
 
 process.on("exit", () => {
   fs.unlinkSync("build/perfReact.json");
