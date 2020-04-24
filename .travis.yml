@@ -17,7 +17,7 @@ jobs:
         - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir=./build --prod
     - stage: docker-deploy
       env:
-        - IMAGE_NAME=andrelmlins1/react-versus-svelte
+        - IMAGE_NAME=andrelmlins1/revelt
       script:
         - yarn bootstrap
         - yarn build
