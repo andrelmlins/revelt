@@ -11,10 +11,9 @@ jobs:
   include:
     - stage: deploy
       script:
-        - npm install netlify-cli@2.47.0 -g
         - yarn bootstrap
         - yarn build
-        - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir=./build --prod
+        - npx netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir=./build --prod
     - stage: docker-deploy
       env:
         - IMAGE_NAME=andrelmlins1/revelt
