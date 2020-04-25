@@ -34,14 +34,15 @@ const getAvailable = () => {
   const serverSvelte = http.createServer((request, response) => {
     return handler(request, response, {
       public: "../../build/svelte",
-      rewrites: [{ source: "/svelte", destination: "index.html" }]
+      rewrites: [{ source: "/svelte/**", destination: "index.html" }]
     });
   });
 
   serverSvelte.listen(3000, () => {
     exec(
       'lighthouse http://localhost:3000/svelte --output=json --output-path=build/perfSvelte.json --chrome-flags="--headless"',
-      () => {
+      (error, stdout) => {
+        console.log(error, stdout);
         const file = fs.readFileSync("./build/perfSvelte.json");
         object.svelte.time = JSON.parse(file.toString()).audits.metrics;
         serverSvelte.close();
@@ -52,14 +53,15 @@ const getAvailable = () => {
   const serverReact = http.createServer((request, response) => {
     return handler(request, response, {
       public: "../../build/react",
-      rewrites: [{ source: "/react", destination: "index.html" }]
+      rewrites: [{ source: "/react/**", destination: "index.html" }]
     });
   });
 
   serverReact.listen(3001, () => {
     exec(
       'lighthouse http://localhost:3001/react --output=json --output-path=build/perfReact.json --chrome-flags="--headless"',
-      () => {
+      (error, stdout) => {
+        console.log(error, stdout);
         const file = fs.readFileSync("./build/perfReact.json");
         object.react.time = JSON.parse(file.toString()).audits.metrics;
         serverReact.close();
@@ -134,15 +136,15 @@ const getTimeBundle = () => {
   });
 };
 
-createBuildFolder();
-copyPublic();
-getSizes();
-getCountLines();
+// createBuildFolder();
+// copyPublic();
+// getSizes();
+// getCountLines();
 getAvailable();
-getTimeBundle();
+// getTimeBundle();
 
-process.on("exit", () => {
-  fs.unlinkSync("build/perfReact.json");
-  fs.unlinkSync("build/perfSvelte.json");
-  fs.appendFileSync("build/data.json", JSON.stringify(object));
-});
+// process.on("exit", () => {
+//   fs.unlinkSync("build/perfReact.json");
+//   fs.unlinkSync("build/perfSvelte.json");
+//   fs.appendFileSync("build/data.json", JSON.stringify(object));
+// });
