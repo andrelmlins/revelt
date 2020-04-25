@@ -134,15 +134,15 @@ const getTimeBundle = () => {
   });
 };
 
-// createBuildFolder();
-// copyPublic();
-// getSizes();
-// getCountLines();
+createBuildFolder();
+copyPublic();
+getSizes();
+getCountLines();
 getAvailable();
-// getTimeBundle();
+getTimeBundle();
 
-// process.on("exit", () => {
-//   fs.unlinkSync("build/perfReact.json");
-//   fs.unlinkSync("build/perfSvelte.json");
-//   fs.appendFileSync("build/data.json", JSON.stringify(object));
-// });
+process.on("exit", () => {
+  fs.unlinkSync("build/perfReact.json");
+  fs.unlinkSync("build/perfSvelte.json");
+  fs.appendFileSync("build/data.json", JSON.stringify(object));
+});
