@@ -4,7 +4,8 @@
   import Header from "./components/Header/index.svelte";
   import Content from "./components/Content/index.svelte";
 
-  import List from "./screens/List/index.svelte";
+  import ListScreen from "./screens/List/index.svelte";
+  import PokemonScreen from "./screens/Pokemon/index.svelte";
 </script>
 
 <style>
@@ -15,7 +16,8 @@
   <Router basepath="/svelte/">
     <Header />
     <Content>
-      <Route path="/" component={List} />
+      <Route path="/" component={ListScreen} />
+      <Route path="/pokemon/:id" component={PokemonScreen} />
     </Content>
   </Router>
 </main>
