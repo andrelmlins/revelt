@@ -18,7 +18,7 @@
     "copy:svelte": "cp -r packages/svelte-app/public build/svelte",
     "copy:analysis": "cp -rf packages/analysis/build/* build",
     "clean": "if [ -d build ]; then rm -Rf build; fi && mkdir build",
-    "bootstrap": "lerna exec npm install"
+    "bootstrap": "lerna exec yarn install --frozen-lockfile"
   },
   "dependencies": {
     "get-folder-size": "^2.0.1"
