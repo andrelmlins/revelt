@@ -27,6 +27,7 @@ const copyPublic = () => {
   fs.copyFileSync("public/global.css", "build/global.css");
   fs.copyFileSync("public/script.js", "build/script.js");
   fs.copyFileSync("public/favicon.ico", "build/favicon.ico");
+  fs.copyFileSync("public/_redirects", "build/_redirects");
   fs.copyFileSync("public/index.html", "build/index.html");
 };
 
