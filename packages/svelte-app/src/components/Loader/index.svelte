@@ -12,5 +12,5 @@
 </style>
 
 <div role="alert" aria-busy="true" class="root">
-  <img alt="Loader" src="./assets/spinner.gif" />
+  <img alt="Loader" src="assets/spinner.gif" />
 </div>

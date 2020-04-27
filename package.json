@@ -10,7 +10,7 @@
     "start": "concurrently --kill-others \"yarn start:react\" \"yarn start:svelte\"",
     "start:react": "cd packages/react-app && yarn start",
     "start:svelte": "cd packages/svelte-app && yarn dev",
-    "build": "yarn clean && yarn build:react && yarn build:svelte && yarn build:analysis",
+    "build": "yarn clean && yarn build:react && yarn build:svelte && yarn build:analysis && node setBasePath.js",
     "build:react": "cd packages/react-app && yarn build && cd ../../ && yarn copy:react",
     "build:svelte": "cd packages/svelte-app && yarn build && cd ../../ && yarn copy:svelte",
     "build:analysis": "cd packages/analysis && yarn build && cd ../../ && yarn copy:analysis",
@@ -21,6 +21,7 @@
     "bootstrap": "lerna exec \"yarn install --frozen-lockfile\""
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "get-folder-size": "^2.0.1"
   }
 }
