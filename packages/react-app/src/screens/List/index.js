@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import { Row, Col } from "react-grid-system";
 
+import Loader from "../../components/Loader";
+
 import CardPokemon from "../../containers/CardPokemon";
 
 import { allPokemons } from "../../services/pokemons";
-import Loader from "../../components/Loader";
 
 const ListScreen = () => {
   const [loading, setLoading] = useState(true);
