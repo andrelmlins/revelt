@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import style from "./CardPokemon.module.css";
 
+import Button from "../../components/Button";
+
 import { IMAGE_ERROR } from "../../core/constants";
 
 const CardPokemonContainer = ({ pokemon }) => {
@@ -19,6 +21,7 @@ const CardPokemonContainer = ({ pokemon }) => {
         src={errorImage ? IMAGE_ERROR : imageUrl}
       />
       <p className={style.text}>{pokemon.name}</p>
+      <Button to={`pokemon/${pokemon.id}`}>view more...</Button>
     </div>
   );
 };
