@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import SvelteInfiniteScroll from "svelte-infinite-scroll";
   import Grid from "svelte-grid-responsive";
+  import DocumentTitle from "svelte-document-title";
 
   import CardPokemon from "../../containers/CardPokemon/index.svelte";
   import Loader from "../../components/Loader/index.svelte";
@@ -31,13 +32,15 @@
 {#if loading}
   <Loader />
 {:else}
-  <Grid container gutter={12}>
-    {#each pokemons as pokemon}
-      <Grid xs={12} sm={6} lg={4}>
-        <CardPokemon {pokemon} />
-      </Grid>
-    {/each}
-  </Grid>
+  <DocumentTitle title="Pokédex">
+    <Grid container gutter={12}>
+      {#each pokemons as pokemon}
+        <Grid xs={12} sm={6} lg={4}>
+          <CardPokemon {pokemon} />
+        </Grid>
+      {/each}
+    </Grid>
+  </DocumentTitle>
 {/if}
 
 <SvelteInfiniteScroll

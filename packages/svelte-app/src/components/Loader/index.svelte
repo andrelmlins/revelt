@@ -1,3 +1,7 @@
+<script>
+  import DocumentTitle from "svelte-document-title";
+</script>
+
 <style>
   .root {
     display: flex;
@@ -11,6 +15,8 @@
   }
 </style>
 
-<div role="alert" aria-busy="true" class="root">
-  <img alt="Loader" src="assets/spinner.gif" />
-</div>
+<DocumentTitle title="loading...">
+  <div role="alert" aria-busy="true" class="root">
+    <img alt="Loader" src="assets/spinner.gif" />
+  </div>
+</DocumentTitle>

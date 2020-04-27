@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import Grid from "svelte-grid-responsive";
+  import DocumentTitle from "svelte-document-title";
 
   import Loader from "../../components/Loader/index.svelte";
   import Progress from "../../components/Progress/index.svelte";
@@ -94,58 +95,60 @@
 {#if loading}
   <Loader />
 {:else}
-  <div class="root">
-    <Grid container gutter={30}>
-      <Grid sm={12} lg={4}>
-        <img
-          alt={pokemon.name}
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} />
-        <section aria-label="Stats">
-          <h3>Stats</h3>
-          {#each pokemon.stats as stat}
-            <Progress label={stat.stat.name} value={stat.base_stat} />
-          {/each}
-        </section>
-      </Grid>
-      <Grid sm={12} lg={8}>
-        <h1 class="title">{pokemon.name}</h1>
-        <section aria-label="Types">
-          <h3>Types</h3>
-          <div aria-label="Stats" role="list" class="types">
-            {#each pokemon.types as type}
-              <div
-                aria-label={type.type.name}
-                role="listitem"
-                class="type"
-                style={`background-color: ${types[type.slot - 1].color}`}>
-                {type.type.name}
-              </div>
+  <DocumentTitle title={`${pokemon.name} Pokemon`}>
+    <div class="root">
+      <Grid container gutter={30}>
+        <Grid sm={12} lg={4}>
+          <img
+            alt={pokemon.name}
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} />
+          <section aria-label="Stats">
+            <h3>Stats</h3>
+            {#each pokemon.stats as stat}
+              <Progress label={stat.stat.name} value={stat.base_stat} />
             {/each}
-          </div>
-        </section>
-        <Grid container gutter={24}>
-          <Grid sm={12} lg={6}>
-            <section aria-label="Moves">
-              <h3>Moves</h3>
-              <ul>
-                {#each pokemon.moves as move}
-                  <li>🐾 {move.move.name}</li>
-                {/each}
-              </ul>
-            </section>
-          </Grid>
-          <Grid sm={12} lg={6}>
-            <section aria-label="Games">
-              <h3>Games</h3>
-              <ul>
-                {#each pokemon.game_indices as game}
-                  <li>🎮 {game.version.name}</li>
-                {/each}
-              </ul>
-            </section>
+          </section>
+        </Grid>
+        <Grid sm={12} lg={8}>
+          <h1 class="title">{pokemon.name}</h1>
+          <section aria-label="Types">
+            <h3>Types</h3>
+            <div aria-label="Stats" role="list" class="types">
+              {#each pokemon.types as type}
+                <div
+                  aria-label={type.type.name}
+                  role="listitem"
+                  class="type"
+                  style={`background-color: ${types[type.slot - 1].color}`}>
+                  {type.type.name}
+                </div>
+              {/each}
+            </div>
+          </section>
+          <Grid container gutter={24}>
+            <Grid sm={12} lg={6}>
+              <section aria-label="Moves">
+                <h3>Moves</h3>
+                <ul>
+                  {#each pokemon.moves as move}
+                    <li>🐾 {move.move.name}</li>
+                  {/each}
+                </ul>
+              </section>
+            </Grid>
+            <Grid sm={12} lg={6}>
+              <section aria-label="Games">
+                <h3>Games</h3>
+                <ul>
+                  {#each pokemon.game_indices as game}
+                    <li>🎮 {game.version.name}</li>
+                  {/each}
+                </ul>
+              </section>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
-  </div>
+    </div>
+  </DocumentTitle>
 {/if}

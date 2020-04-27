@@ -569,6 +569,11 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
+svelte-document-title@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/svelte-document-title/-/svelte-document-title-0.1.0.tgz#ec7a4fd6abef87236c298f781faf00b31509e4a8"
+  integrity sha512-+XgXX/70sqLhUAgabGrQgjgVf7QDgvvZZdVWgLG15SOFZA75RR7J2Xtc7Jj7Flj0rwO29YSP1qk1fip9pEkYOA==
+
 svelte-grid-responsive@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/svelte-grid-responsive/-/svelte-grid-responsive-0.3.0.tgz#1d74b2a87e30daeff11d6dfcdab98233240b6212"
