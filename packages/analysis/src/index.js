@@ -70,7 +70,7 @@ const getAvailable = () => {
 };
 
 const getSizes = () => {
-  getSize("../../build/svelte", (err, size) => {
+  getSize("../../build/svelte/build", (err, size) => {
     if (err) {
       throw err;
     }
@@ -80,7 +80,7 @@ const getSizes = () => {
     };
   });
 
-  getSize("../../build/react", (err, size) => {
+  getSize("../../build/react/static", (err, size) => {
     if (err) {
       throw err;
     }
