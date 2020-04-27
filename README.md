@@ -33,7 +33,7 @@ There's an official docker image available on [Dockerhub](https://hub.docker.com
 
 ```
 $ docker pull andrelmlins1/revelt
-$ docker run -d -p 80:8080 --name andrelmlins1/revelt
+$ docker run -d -p 8080:80 --name revelt andrelmlins1/revelt
 ```
 
 ## Contribution guidelines
