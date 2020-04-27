@@ -13,6 +13,30 @@
 
   progress {
     width: 100%;
+    -webkit-appearance: none;
+    margin-top: 3px;
+  }
+
+  progress::-webkit-progress-bar {
+    border-radius: 5px;
+    height: 10px;
+    background-color: #9e9e9e;
+  }
+
+  progress::-webkit-progress-value {
+    border-radius: 5px;
+    background-color: #386aad;
+  }
+
+  progress::-moz-progress-value {
+    border-radius: 5px;
+    background-color: #386aad;
+  }
+
+  progress::-moz-progress-bar {
+    border-radius: 5px;
+    height: 10px;
+    background-color: #9e9e9e;
   }
 </style>
 

@@ -71,7 +71,7 @@
 
   ul {
     padding-left: 0px;
-    max-height: 350px;
+    max-height: 320px;
     overflow-y: scroll;
     list-style-type: none;
   }
