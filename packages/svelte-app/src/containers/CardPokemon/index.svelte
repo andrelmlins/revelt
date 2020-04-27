@@ -1,4 +1,5 @@
 <script>
+  import Button from "../../components/Button/index.svelte";
   import { IMAGE_ERROR } from "../../core/constants";
 
   export let pokemon;
@@ -42,6 +43,7 @@
     color: #386aad;
     font-size: 25pt;
     margin: 0;
+    margin-bottom: 15px;
   }
 
   .defaultImage:hover {
@@ -56,4 +58,5 @@
     src={errorImage ? IMAGE_ERROR : imageUrl}
     class={errorImage ? 'defaultImage' : ''} />
   <p>{pokemon.name}</p>
+  <Button to={`pokemon/${pokemon.id}`}>view more...</Button>
 </div>

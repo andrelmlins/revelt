@@ -15,6 +15,7 @@
 }
 
 .root:focus {
+  cursor: pointer;
   outline: none;
   border-color: #386aad;
   border-left-color: #7396c5;
