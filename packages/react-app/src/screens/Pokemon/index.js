@@ -63,13 +63,13 @@ const PokemonScreen = ({ match }) => {
               ))}
             </div>
           </section>
-          <Row gutterWidth={6}>
+          <Row gutterWidth={24}>
             <Col sm={12} lg={6}>
               <section aria-label="Moves" style={{ marginTop: 16 }}>
                 <h3>Moves</h3>
                 <ul className={style.list}>
                   {pokemon.moves.map(item => (
-                    <li>{item.move.name}</li>
+                    <li>🐾 {item.move.name}</li>
                   ))}
                 </ul>
               </section>
@@ -79,7 +79,7 @@ const PokemonScreen = ({ match }) => {
                 <h3>Games</h3>
                 <ul className={style.list}>
                   {pokemon.game_indices.map(item => (
-                    <li>{item.version.name}</li>
+                    <li>🎮 {item.version.name}</li>
                   ))}
                 </ul>
               </section>

@@ -8,6 +8,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
   }
 
   progress {
@@ -16,6 +17,6 @@
 </style>
 
 <div class="root">
-  <label for="file">{label}</label>
-  <progress id="file" {value} max="100" />
+  <label for={label}>{label}</label>
+  <progress id={label} {value} max="100" />
 </div>

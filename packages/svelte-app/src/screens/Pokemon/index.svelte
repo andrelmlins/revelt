@@ -69,9 +69,21 @@
   }
 
   ul {
-    padding-left: 18px;
-    max-height: 300px;
+    padding-left: 0px;
+    max-height: 350px;
     overflow-y: scroll;
+    list-style-type: none;
+  }
+
+  ul li {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+
+  ul li:first-child {
+    border-top: 1px solid #ccc;
   }
 
   .types {
@@ -111,13 +123,13 @@
             {/each}
           </div>
         </section>
-        <Grid container gutter={6}>
+        <Grid container gutter={24}>
           <Grid sm={12} lg={6}>
             <section aria-label="Moves">
               <h3>Moves</h3>
               <ul>
                 {#each pokemon.moves as move}
-                  <li>{move.move.name}</li>
+                  <li>🐾 {move.move.name}</li>
                 {/each}
               </ul>
             </section>
@@ -127,7 +139,7 @@
               <h3>Games</h3>
               <ul>
                 {#each pokemon.game_indices as game}
-                  <li>{game.version.name}</li>
+                  <li>🎮 {game.version.name}</li>
                 {/each}
               </ul>
             </section>

@@ -47,7 +47,19 @@
 }
 
 .list {
-  padding-left: 18px;
-  max-height: 300px;
+  padding-left: 0px;
+  max-height: 350px;
   overflow-y: scroll;
+  list-style-type: none;
+}
+
+.list li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.list li:first-child {
+  border-top: 1px solid #ccc;
 }
