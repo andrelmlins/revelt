@@ -20,3 +20,8 @@ export const allPokemons = async page => {
     })
   };
 };
+
+export const getPokemon = async id => {
+  const result = await axios.get(`${URL}/pokemon/${id}`);
+  return result.data;
+};

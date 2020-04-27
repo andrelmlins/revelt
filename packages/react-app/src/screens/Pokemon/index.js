@@ -48,24 +48,24 @@ const PokemonScreen = ({ match }) => {
         </Col>
         <Col sm={12} lg={8}>
           <h1 className={style.title}>{pokemon.name}</h1>
-          <section aria-label="Stats" style={{ marginTop: 16 }}>
+          <section aria-label="Types" style={{ marginTop: 16 }}>
             <h3>Types</h3>
-            <Row gutterWidth={6}>
+            <div aria-label="Types" role="list" className={style.types}>
               {pokemon.types.map(item => (
-                <Col key={item.slot}>
-                  <div
-                    className={style.type}
-                    style={{ backgroundColor: types[item.slot - 1].color }}
-                  >
-                    {item.type.name}
-                  </div>
-                </Col>
+                <div
+                  aria-label={item.type.name}
+                  role="listitem"
+                  className={style.type}
+                  style={{ backgroundColor: types[item.slot - 1].color }}
+                >
+                  {item.type.name}
+                </div>
               ))}
-            </Row>
+            </div>
           </section>
           <Row gutterWidth={6}>
             <Col sm={12} lg={6}>
-              <section aria-label="Stats" style={{ marginTop: 16 }}>
+              <section aria-label="Moves" style={{ marginTop: 16 }}>
                 <h3>Moves</h3>
                 <ul className={style.list}>
                   {pokemon.moves.map(item => (
@@ -75,7 +75,7 @@ const PokemonScreen = ({ match }) => {
               </section>
             </Col>
             <Col sm={12} lg={6}>
-              <section aria-label="Stats" style={{ marginTop: 16 }}>
+              <section aria-label="Games" style={{ marginTop: 16 }}>
                 <h3>Games</h3>
                 <ul className={style.list}>
                   {pokemon.game_indices.map(item => (

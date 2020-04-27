@@ -16,7 +16,7 @@
   font-family: Pokemon;
   color: #386aad;
   font-size: 30pt;
-  margin: 0;
+  margin-bottom: 0;
   text-align: center;
 }
 
@@ -30,11 +30,20 @@
     0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
+.types {
+  display: inline-flex;
+}
+
 .type {
   text-align: center;
-  padding: 4px 5px;
+  padding: 4px 10px;
   box-sizing: border-box;
   color: white;
+  border-radius: 2px;
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .list {
