@@ -13,7 +13,7 @@
     "react-router-dom": "^5.1.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot --port 8080 --mode=development",
+    "start": "webpack-dev-server --progress --inline --hot --port 5001 --mode=development",
     "build": "webpack-cli --mode=production"
   },
   "eslintConfig": {

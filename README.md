@@ -7,25 +7,40 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/andrelmlins/revelt/blob/master/LICENSE) &bull; [![Build Status](https://travis-ci.com/andrelmlins/revelt.svg?branch=master)](https://travis-ci.com/andrelmlins/revelt) &bull; [![Docker Pulls](https://img.shields.io/docker/pulls/andrelmlins1/revelt)](https://hub.docker.com/repository/docker/andrelmlins1/revelt) &bull; [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/andrelmlins1/revelt)](https://hub.docker.com/repository/docker/andrelmlins1/revelt)
 
-## Goals
+## ✔️ Goals
 
-- Compare these javascript technologies
-- Analyze code amount
-- Analyze generated build size
-- Time analysis
+- 🥇 Compare these javascript technologies
+- ➕ Analyze code amount
+- 🔊 Analyze generated build size
+- ⏱️ Time analysis
 
-## Tools
+## ℹ️ How to use
+
+```
+git clone https://github.com/andrelmlins/revelt.git
+cd revelt
+yarn install && yarn start
+```
+
+**React application**
+
+To view react application _http://localhost:5001/react_ and to edit go to the /packages/react-app package.
+
+Open [demo](https://revelt.netlify.app/react/) react application.
+
+**to view svelte application**
+
+To view react application _http://localhost:5001/react_ and to edit go to the /packages/svelte-app package.
+
+Open [demo](https://revelt.netlify.app/svelte/) svelte application.
+
+## ⚙️ Tools
 
 - [get-folder-size](https://github.com/alessioalex/get-folder-size)
 - [cloc](https://github.com/kentcdodds/cloc)
 - [lighthouse](https://github.com/GoogleChrome/lighthouse)
 
-## Applications
-
-- [Svelte](https://revelt.netlify.app/svelte/)
-- [React](https://revelt.netlify.app/react/)
-
-## Use Docker Image
+## 🐳 Use Docker Image
 
 [![dockeri.co](https://dockeri.co/image/andrelmlins1/revelt)](https://hub.docker.com/r/andrelmlins1/revelt)
 
