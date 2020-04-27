@@ -28,9 +28,9 @@ To view react application _http://localhost:5001/react_ and to edit go to the /p
 
 Open [demo](https://revelt.netlify.app/react/) react application.
 
-**to view svelte application**
+**Svelte application**
 
-To view react application _http://localhost:5001/react_ and to edit go to the /packages/svelte-app package.
+To view svelte application _http://localhost:5000/svelte_ and to edit go to the /packages/svelte-app package.
 
 Open [demo](https://revelt.netlify.app/svelte/) svelte application.
 
