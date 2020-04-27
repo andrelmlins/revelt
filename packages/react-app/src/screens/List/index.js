@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import { Row, Col } from "react-grid-system";
+import DocumentTitle from "react-document-title";
 
 import Loader from "../../components/Loader";
 
@@ -37,15 +38,23 @@ const ListScreen = () => {
   }
 
   return (
-    <InfiniteScroll pageStart={0} loadMore={getMore} hasMore={hasMore}>
-      <Row gutterWidth={12}>
-        {pokemons.map(item => (
-          <Col key={item.id} xs={12} sm={6} lg={4} style={{ marginBottom: 12 }}>
-            <CardPokemon pokemon={item} />
-          </Col>
-        ))}
-      </Row>
-    </InfiniteScroll>
+    <DocumentTitle title="Pokédex">
+      <InfiniteScroll pageStart={0} loadMore={getMore} hasMore={hasMore}>
+        <Row gutterWidth={12}>
+          {pokemons.map(item => (
+            <Col
+              key={item.id}
+              xs={12}
+              sm={6}
+              lg={4}
+              style={{ marginBottom: 12 }}
+            >
+              <CardPokemon pokemon={item} />
+            </Col>
+          ))}
+        </Row>
+      </InfiniteScroll>
+    </DocumentTitle>
   );
 };
 
