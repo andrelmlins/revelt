@@ -8,10 +8,6 @@
   import PokemonScreen from "./screens/Pokemon/index.svelte";
 </script>
 
-<style>
-
-</style>
-
 <main>
   <Router basepath="/svelte/">
     <Header />

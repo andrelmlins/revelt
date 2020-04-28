@@ -19,6 +19,7 @@
   color: white;
   font-weight: 600;
   text-shadow: 1px 1px 2px #333;
+  text-decoration: none;
 }
 
 .title strong {

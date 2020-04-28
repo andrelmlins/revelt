@@ -1,3 +1,7 @@
+<script>
+  import { Link } from "svelte-routing";
+</script>
+
 <style>
   .root {
     margin: 0 auto;
@@ -23,15 +27,17 @@
   }
 
   img {
-    height: 100%;
+    height: 64px;
   }
 </style>
 
 <div class="root">
   <header>
-    <img
-      alt="Pokemon"
-      src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo.png" />
+    <Link to="/">
+      <img
+        alt="Pokemon"
+        src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo.png" />
+    </Link>
   </header>
   <div class="content">
     <slot />

@@ -11,14 +11,14 @@ const App = () => {
   return (
     <>
       <Header />
-      <Content>
-        <BrowserRouter basename="/react/">
+      <BrowserRouter basename="/react/">
+        <Content>
           <Switch>
             <Route exact path="/" component={ListScreen} />
             <Route exact path="/pokemon/:id" component={PokemonScreen} />
           </Switch>
-        </BrowserRouter>
-      </Content>
+        </Content>
+      </BrowserRouter>
     </>
   );
 };

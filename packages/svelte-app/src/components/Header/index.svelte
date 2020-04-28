@@ -13,21 +13,22 @@
     flex-direction: column;
     min-height: 64px;
   }
-  p {
+  a {
     font-size: 30px;
     margin: 0;
     color: white;
     font-weight: 600;
     text-shadow: 1px 1px 2px #333;
+    text-decoration: none;
   }
-  p strong {
+  a strong {
     font-weight: 900;
   }
 </style>
 
 <header>
-  <p>
+  <a href="/">
     <strong>Svelte</strong>
     x React
-  </p>
+  </a>
 </header>
