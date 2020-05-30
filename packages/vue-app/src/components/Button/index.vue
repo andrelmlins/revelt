@@ -1,0 +1,46 @@
+<template>
+  <router-link tag="a" :to="to" class="button">
+    <slot />
+  </router-link>
+</template>
+
+<script>
+export default {
+  name: "Button",
+  props: {
+    to: String
+  }
+};
+</script>
+
+<style scoped>
+.button {
+  border: none;
+  padding: 8px 12px;
+  border: 5px solid #386aad;
+  border-left: 5px solid #7396c5;
+  border-right: 5px solid #7396c5;
+  background-color: #4b78b5;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 10px;
+  text-decoration: none;
+  transition: 0.2s all;
+}
+
+.button:focus {
+  outline: none;
+  border-color: #386aad;
+  border-left-color: #7396c5;
+  border-right-color: #7396c5;
+}
+
+.button:hover {
+  cursor: pointer;
+  border-color: #7396c5;
+  border-left-color: #386aad;
+  border-right-color: #386aad;
+}
+</style>
