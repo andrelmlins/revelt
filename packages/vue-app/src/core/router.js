@@ -1,26 +1,26 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../screens/Home.vue";
-import About from "../screens/About.vue";
+import List from "../screens/List";
+import Pokemon from "../screens/Pokemon";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "List",
+    component: List
   },
   {
-    path: "/about",
-    name: "About",
-    component: About
+    path: "/pokemon/:id",
+    name: "Pokemon",
+    component: Pokemon
   }
 ];
 
 const router = new VueRouter({
   mode: "history",
-  base: process.env.BASE_URL,
+  base: "/vue/",
   routes
 });
 

@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "moment": "^2.26.0",
     "vue": "^2.6.11",
+    "vue-headful": "^2.1.0",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {
