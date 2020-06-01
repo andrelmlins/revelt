@@ -1,5 +1,5 @@
 <template>
-  <div role="alert" aria-busy="true" class="root">
+  <div role="alert" aria-busy="true" class="root-loader">
     <vue-headful title="loading..." />
     <img alt="Loader" src="assets/spinner.gif" />
   </div>
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style scoped>
-.root {
+.root-loader {
   display: flex;
   width: 100%;
   height: 100%;

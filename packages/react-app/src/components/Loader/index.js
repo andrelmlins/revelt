@@ -5,7 +5,7 @@ import style from "./Loader.module.css";
 
 const LoaderComponent = () => (
   <DocumentTitle title="loading...">
-    <div role="alert" aria-busy="true" className={style.root}>
+    <div role="alert" aria-busy="true" className={style["root-loader"]}>
       <img alt="Loader" src="assets/spinner.gif" />
     </div>
   </DocumentTitle>

@@ -4,7 +4,7 @@
 </script>
 
 <style>
-  .root {
+  .root-progress {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@
   }
 </style>
 
-<div class="root">
+<div class="root-progress">
   <label for={label}>{label}</label>
   <progress id={label} {value} max="100" />
 </div>

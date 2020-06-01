@@ -3,13 +3,7 @@
     <Loader v-if="loading" />
     <vue-headful v-if="!loading" title="Pokédex" />
     <row :gutter="12" v-if="!loading">
-      <column
-        v-for="pokemon in pokemons"
-        :key="pokemon.id"
-        :xs="12"
-        :sm="6"
-        :lg="4"
-      >
+      <column v-for="pokemon in pokemons" :key="pokemon.id" :xs="12" :sm="6" :lg="4">
         <CardPokemon :pokemon="pokemon" />
       </column>
     </row>
