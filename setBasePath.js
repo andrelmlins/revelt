@@ -10,3 +10,4 @@ const prefixLinks = (file, base) => {
 
 prefixLinks("build/react/index.html", "/react/");
 prefixLinks("build/svelte/index.html", "/svelte/");
+prefixLinks("build/vue/index.html", "/vue/");

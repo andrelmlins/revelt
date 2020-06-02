@@ -7,7 +7,7 @@ const fs = require("fs");
 const handler = require("serve-handler");
 const http = require("http");
 
-const object = { svelte: {}, react: {} };
+const object = { svelte: {}, react: {}, vue: {} };
 
 const createBuildFolder = () => {
   if (fs.existsSync("build")) {
@@ -24,6 +24,7 @@ const copyPublic = () => {
 
   fs.copyFileSync("public/assets/react.svg", "build/assets/react.svg");
   fs.copyFileSync("public/assets/svelte.svg", "build/assets/svelte.svg");
+  fs.copyFileSync("public/assets/vue.svg", "build/assets/vue.svg");
   fs.copyFileSync("public/global.css", "build/global.css");
   fs.copyFileSync("public/script.js", "build/script.js");
   fs.copyFileSync("public/favicon.ico", "build/favicon.ico");
@@ -67,6 +68,24 @@ const getAvailable = () => {
       }
     );
   });
+
+  const serverVue = http.createServer((request, response) => {
+    return handler(request, response, {
+      public: "../../build/vue",
+      rewrites: [{ source: "/vue/**", destination: "index.html" }]
+    });
+  });
+
+  serverVue.listen(3002, () => {
+    exec(
+      'lighthouse http://localhost:3002/vue --output=json --output-path=build/perfVue.json --chrome-flags="--headless"',
+      () => {
+        const file = fs.readFileSync("./build/perfVue.json");
+        object.vue.time = JSON.parse(file.toString()).audits.metrics;
+        serverVue.close();
+      }
+    );
+  });
 };
 
 const getSizes = () => {
@@ -89,6 +108,21 @@ const getSizes = () => {
       bytes: size
     };
   });
+
+  getSize("../../build/vue/js", (err, sizeJs) => {
+    if (err) {
+      throw err;
+    }
+    getSize("../../build/vue/css", (err, sizeCss) => {
+      if (err) {
+        throw err;
+      }
+      object.vue.size = {
+        format: ((sizeJs + sizeCss) / 1024 / 1024).toFixed(2) + " MB",
+        bytes: sizeJs + sizeCss
+      };
+    });
+  });
 };
 
 const getCountLines = () => {
@@ -109,6 +143,16 @@ const getCountLines = () => {
       delete data.header;
 
       object.react.countLine = data;
+    }
+  );
+
+  exec(
+    "cloc ../vue-app/src --json --force-lang-def=cloc_definitions.txt",
+    (error, stdout) => {
+      let data = JSON.parse(stdout);
+      delete data.header;
+
+      object.vue.countLine = data;
     }
   );
 };
@@ -133,6 +177,16 @@ const getTimeBundle = () => {
       format: `${(time / 1000).toFixed(2)}s`
     };
   });
+
+  const startDateVue = new Date();
+  exec("cd ../vue-app && yarn build", () => {
+    const time = new Date().getTime() - startDateVue.getTime();
+
+    object.vue.buildTime = {
+      miliseconds: time,
+      format: `${(time / 1000).toFixed(2)}s`
+    };
+  });
 };
 
 createBuildFolder();
@@ -145,5 +199,6 @@ getTimeBundle();
 process.on("exit", () => {
   fs.unlinkSync("build/perfReact.json");
   fs.unlinkSync("build/perfSvelte.json");
+  fs.unlinkSync("build/perfVue.json");
   fs.appendFileSync("build/data.json", JSON.stringify(object));
 });

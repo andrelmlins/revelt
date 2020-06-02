@@ -10,6 +10,7 @@ HTML
     extension htm
     extension html
     extension svelte
+    extension vue
     extension html.hl
     extension xht
     3rd_gen_scale 1.90
