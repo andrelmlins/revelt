@@ -1,7 +1,6 @@
 <div align="center">
   <img alt="Logo" src="https://raw.githubusercontent.com/andrelmlins/revelt/master/logo.png" />
-  <h1>Revelt</h1>
-  <h4>Analysis of a project using front-end technologies.</h4>
+  <h2>Analysis of a project using front-end technologies.</h2>
   <br />
 </div>
 
@@ -28,13 +27,13 @@ To view react application _http://localhost:5001/react_ and to edit go to the /p
 
 Open [demo](https://revelt.netlify.app/react/) react application.
 
-**Svelte application**
+🟧 **Svelte application**
 
 To view svelte application _http://localhost:5000/svelte_ and to edit go to the /packages/svelte-app package.
 
 Open [demo](https://revelt.netlify.app/svelte/) svelte application.
 
-**Vue application**
+🟩 **Vue application**
 
 To view vue application _http://localhost:5000/vue_ and to edit go to the /packages/vue-app package.
 
