@@ -125,7 +125,8 @@ ul * {
   }
 
   img {
-    height: 150px;
+    width: 150px;
+    height: auto;
     margin-bottom: 0;
     margin-right: 20px;
   }
