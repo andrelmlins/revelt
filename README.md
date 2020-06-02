@@ -1,7 +1,7 @@
 <div align="center">
   <img alt="Logo" src="https://raw.githubusercontent.com/andrelmlins/revelt/master/logo.png" />
-  <h1>React x Svelte</h1>
-  <h4>Analysis of a project using React and Svelte technologies.</h4>
+  <h1>React / Svelte / Vue</h1>
+  <h4>Analysis of a project using front-end technologies.</h4>
   <br />
 </div>
 
@@ -11,7 +11,7 @@
 
 - 🥇 Compare these javascript technologies
 - ➕ Analyze code amount
-- 🔊 Analyze generated build size
+- 🔊 Analyze generated build size and building time
 - ⏱️ Time analysis
 
 ## ℹ️ How to use
@@ -34,11 +34,18 @@ To view svelte application _http://localhost:5000/svelte_ and to edit go to the 
 
 Open [demo](https://revelt.netlify.app/svelte/) svelte application.
 
+**Vue application**
+
+To view vue application _http://localhost:5000/vue_ and to edit go to the /packages/vue-app package.
+
+Open [demo](https://revelt.netlify.app/vue/) vue application.
+
 ## ⚙️ Tools
 
 - [get-folder-size](https://github.com/alessioalex/get-folder-size)
 - [cloc](https://github.com/kentcdodds/cloc)
 - [lighthouse](https://github.com/GoogleChrome/lighthouse)
+- [serve-handler](https://github.com/vercel/serve-handler)
 
 ## 🐳 Use Docker Image
 
