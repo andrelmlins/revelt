@@ -1,6 +1,6 @@
 <div align="center">
   <img alt="Logo" src="https://raw.githubusercontent.com/andrelmlins/revelt/master/logo.png" />
-  <h1>React / Svelte / Vue</h1>
+  <h1>Revelt</h1>
   <h4>Analysis of a project using front-end technologies.</h4>
   <br />
 </div>
@@ -22,7 +22,7 @@ cd revelt
 yarn install && yarn start
 ```
 
-**React application**
+🟦 **React application**
 
 To view react application _http://localhost:5001/react_ and to edit go to the /packages/react-app package.
 
