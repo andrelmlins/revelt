@@ -14,6 +14,8 @@ jobs:
         - yarn bootstrap
         - yarn build
         - npx netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir=./build --prod
+      on:
+        branch: master
     - stage: docker-deploy
       env:
         - IMAGE_NAME=andrelmlins1/revelt
