@@ -16,7 +16,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "sirv-cli": "^0.4.4",
     "svelte-document-title": "^0.1.0",
     "svelte-grid-responsive": "^0.3.0",
